@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/thermalspring/1.6" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:gmlsf="http://www.opengis.net/gmlsf" targetNamespace="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/thermalspring/1.6" elementFormDefault="qualified" version="1.06">
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Ryan Clark (private) -->
+<xs:schema xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/thermalspring/1.8" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:gmlsf="http://www.opengis.net/gmlsf" targetNamespace="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/thermalspring/1.8" elementFormDefault="qualified" version="1.08">
 	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
 	<xs:annotation>
 		<!-- This XSD document, including XML schema, indicates the content requested for AASG geothermal data interoperable web services for description of thermal spring temperature and location data. In the geothermal data system, thermal spring features are one of the sampling feature services that are used as a method to discover resources derived from borehole with particular characteristics. Each thermal spring should have a unique ThermalSpringURI-->
-		<!--This XSD document was created on 2011-09-16 by Celia Coleman, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the thermal springs in WY, OR, CO, CA and AZ-->
+		<!--This XSD document was created on 2012-02-24 by Celia Coleman, AZGS.  This schema is based on the data available in the AASG Web Feature Services created for the thermal springs in WY, OR, CO, CA and AZ-->
 		<xs:appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
 			<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
 			<gmlsf:GMLProfileSchema>
@@ -23,10 +24,9 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 								<xs:maxLength value="255"/>
 							</xs:restriction>
 						</xs:simpleType>
-					</xs:element>					
-					<xs:element name="SpringName" type="xs:string" minOccurs="0"/>
-					<xs:element name="Name" type="xs:string" minOccurs="0"/>
-					<xs:element name="Label" type="xs:string" minOccurs="0"/>
+					</xs:element>
+					<xs:element name="SpringName" type="xs:string"/>
+					<xs:element name="Label" type="xs:string"/>
 					<xs:element name="OtherName" type="xs:string" minOccurs="0"/>
 					<xs:element name="OtherIdentifier" type="xs:string" minOccurs="0"/>
 					<xs:element name="Description" type="xs:string" minOccurs="0"/>
@@ -49,27 +49,19 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 					<xs:element name="LatDegree" type="xs:double"/>
 					<xs:element name="LongDegree" type="xs:double"/>
 					<xs:element name="SRS" type="xs:string"/>
-					<xs:element name="LocationUncertaintyStatement" type="xs:string" minOccurs="0"/>
-					<xs:element name="ObservationURI" minOccurs="0">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:maxLength value="255"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:element>
-					<xs:element name="Temperature" type="xs:double" minOccurs="0"/>
-					<xs:element name="TemperatureUnits" type="xs:string" minOccurs="0"/>
-					<xs:element name="TempMeasurementProcedure" type="xs:string" minOccurs="0"/>
-					<xs:element name="TempMeasurementDateTime" type="xs:string" minOccurs="0"/>
+					<xs:element name="LocationUncertaintyStatement" type="xs:string"/>
+					<xs:element name="Temperature" type="xs:double"/>
+					<xs:element name="TemperatureUnits" type="xs:string"/>
+					<xs:element name="TempMeasurementProcedure" type="xs:string"/>
+					<xs:element name="TempMeasurementDateTime" type="xs:string"/>
 					<xs:element name="Flow" type="xs:string" minOccurs="0"/>
 					<xs:element name="FlowUnits" type="xs:string" minOccurs="0"/>
 					<xs:element name="FlowMeasurementProcedure" type="xs:string" minOccurs="0"/>
 					<xs:element name="FlowMeasurementDateTime" type="xs:string" minOccurs="0"/>
-					<xs:element name="MeasurementSource" type="xs:string" minOccurs="0"/>
+					<xs:element name="MeasurementSource" type="xs:string"/>
 					<xs:element name="FlowContinuity" type="xs:string" minOccurs="0"/>
 					<xs:element name="Classification" type="xs:string" minOccurs="0"/>
 					<xs:element name="RelatedWaterChemistry" type="xs:string" minOccurs="0"/>
-					<xs:element name="DataEntrySource" type="xs:string" minOccurs="0"/>
 					<xs:element name="RelatedResources" type="xs:string" minOccurs="0"/>
 					<xs:element name="Remarks" type="xs:string" minOccurs="0"/>
 					<xs:element name="Notes" type="xs:string" minOccurs="0"/>
