@@ -5,7 +5,7 @@
 	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
 	<xs:annotation>
 		<!-- This XSD document, including XML schema, indicates the content requested for AASG geothermal data interoperable web services for description of thermal spring temperature and location data. In the geothermal data system, thermal spring features are one of the sampling feature services that are used as a method to discover resources derived from borehole with particular characteristics. Each thermal spring should have a unique ThermalSpringURI-->
-		<!--Annotated version 1.8.1. This XSD document was created on 2012-02-24 by Celia Coleman, AZGS. This schema is based on the data available in the AASG Web Feature Services created for the thermal springs in WY, OR, CO, CA and AZ. Field Description annotations standardized 2013-08-22 by Esty Pape, AZGS.-->
+		<!--Version 1.8.2 changed date type to 'dateTime'. Annotated version 1.8.1. This XSD document was created on 2012-02-24 by Celia Coleman, AZGS. This schema is based on the data available in the AASG Web Feature Services created for the thermal springs in WY, OR, CO, CA and AZ. Field Description annotations standardized 2013-08-22 by Esty Pape, AZGS.-->
 		<xs:appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
 			<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
 			<gmlsf:GMLProfileSchema>
@@ -66,7 +66,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 						<xs:annotation>
 							<xs:documentation>Identifier, DOI or other URI, for the cited source. Ideally an http URI that may be dereferenced to produce a representation of the original source document.</xs:documentation>
 						</xs:annotation>
-						</xs:element>
+					</xs:element>
 					<xs:element name="FeatureType" type="xs:string">
 						<xs:annotation>
 							<xs:documentation>Type of spring feature: Hot spring (Spring that issues water with temperature above 50 °C and over 15 °C above mean annual air temperature); Warm spring (Spring that issues water with temperature below 50 °C and 15 C or less above mean annual air temperature); Thermal spring (Spring that issues water with water temperature above body  temperature).</xs:documentation>
@@ -172,7 +172,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							<xs:documentation>Text description of measurement procedure and methods used to calculate corrections.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="TempMeasurementDateTime" type="xs:string">
+					<xs:element name="TempMeasurementDateTime" type="xs:dateTime">
 						<xs:annotation>
 							<xs:documentation>Date for the record (date on which observation, measurement or test was made or specimen was collected. Day, month and year must be specified; Excel will display using ISO 8601 date and time (yyyy-mm-ddT:hh:mm) format. If only the year is known, enter month and day as 'Jan. 1', (or '1/1/', or '1-1-', or 'January 1,'). All dates will be converted to yyyy-mm-ddThh:mm.</xs:documentation>
 						</xs:annotation>
@@ -192,7 +192,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 							<xs:documentation>Text description of how the measurement was made - instrumentation, logging rate, correction or extrapolation process, how time since circulation was determined, etc. Data provider should indicate QA/QC performed on the data, including individual or institution, time frame and depth of quality check.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="FlowMeasurementDateTime" type="xs:string" minOccurs="0">
+					<xs:element name="FlowMeasurementDateTime" type="xs:dateTime" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Date for the record (date on which observation, measurement or test was made or specimen was collected. Day, month and year must be specified; Excel will display using ISO 8601 date and time (yyyy-mm-ddT:hh:mm) format. If only the year is known, enter month and day as 'Jan. 1', (or '1/1/', or '1-1-', or 'January 1,'). All dates will be converted to yyyy-mm-ddThh:mm.</xs:documentation>
 						</xs:annotation>
@@ -236,7 +236,7 @@ http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gml
 						<xs:annotation>
 							<xs:documentation>Added by GIS for WFS service; this element appears in the xml output, but is generated during service deployment from the latitude and longitude, therefore it doesn't appear in the template.</xs:documentation>
 						</xs:annotation>
-						</xs:element>
+					</xs:element>
 					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
